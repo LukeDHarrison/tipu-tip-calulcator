@@ -100,6 +100,7 @@ twentyFivePercentBtn.addEventListener("click", function () {
     Math.round((billTotal + Number.EPSILON) * 100) / 100;
 });
 
+// split the final bill
 split.addEventListener("click", function () {
   const splitBill = billTotal / 2;
   totalBillOutput.innerHTML =
