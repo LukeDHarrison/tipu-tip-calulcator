@@ -86,8 +86,8 @@ body {
 
 .bill-amount form input::placeholder {
   font-size: 18px;
-  font-weight: 100;
-  color: #535383;
+  font-weight: 300;
+  color: #61618f;
   text-align: center;
 }
 
