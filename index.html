@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="./assets/tipu-favicon.png"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Tip Calculator</title>
+  </head>
+  <body>
+    <section class="calculator-container">
+      <div class="calculator">
+        <div class="bill-amount">
+          <p>How much is your bill?</p>
+          <form id="inputForm" onsubmit="return false">
+            <label for="billInput" aria-label="Enter your bill amount"></label>
+            <input
+              id="billInput"
+              name="billInput"
+              type="number"
+              max="9999"
+              placeholder="Enter your bill amount"
+              autofocus
+            />
+          </form>
+        </div>
+        <div class="tip-percentage">
+          <button id="tenPercentBtn" class="percentage">10%</button>
+          <button id="fifteenPercentBtn" class="percentage">15%</button>
+          <button id="twentyPercentBtn" class="percentage">20%</button>
+          <button id="twentyFivePercentBtn" class="percentage">25%</button>
+        </div>
+        <div class="totals">
+          <h1>
+            Your tip =
+            <div id="highlight">
+              <span>$</span><span id="tipOutput">0</span>
+            </div>
+          </h1>
+          <h3>
+            Total bill =
+            <span>$</span><span id="totalBillOutput">0</span>
+          </h3>
+          <button id="split">Split your bill?</button>
+        </div>
+      </div>
+      <footer>
+        <img class="logo" src="./assets/tipu-logo.png" alt="tipu-logo" />
+        <p>
+          made by
+          <a href="https://twitter.com/LukeDHarrison_" target="_blank"> ldh</a>
+        </p>
+      </footer>
+    </section>
+    <script src="/calculator.js"></script>
+  </body>
+</html>

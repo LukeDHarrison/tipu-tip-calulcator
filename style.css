@@ -1,0 +1,267 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-text-color: #abacd6;
+}
+
+body {
+  background-image: url(/assets/calculator-background.jpg);
+  color: var(--primary-text-color);
+  font-size: 18;
+  font-weight: 100;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+
+.calculator-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(180deg, #010459, #000249, rgba(0, 1, 56, 1));
+  padding: 3rem;
+  max-width: 550px;
+  border-radius: 10px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.bill-amount {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.bill-amount p {
+  font-size: 25px;
+  font-weight: 200;
+}
+
+.bill-amount form input {
+  background: none;
+  text-align: center;
+  font-size: 30px;
+  color: inherit;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid #323369;
+  padding: 10px;
+  max-width: 15ch;
+}
+
+.bill-amount form input:focus,
+.tip-percentage button:focus,
+#split:focus {
+  border: none;
+  outline: 1px solid;
+  outline-offset: 3px;
+  outline-color: #44478c;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.bill-amount form input:focus {
+  border-bottom: 1px solid #030663;
+}
+
+.bill-amount form input::placeholder {
+  font-size: 18px;
+  font-weight: 100;
+  color: #535383;
+  text-align: center;
+}
+
+.user-prompt {
+  animation: bounce 0.9s ease-in-out 1;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+  margin: 0;
+}
+
+.tip-percentage {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 5.5rem;
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.tip-percentage button {
+  color: inherit;
+  font-size: 30px;
+  background-color: #373867;
+  border: 1px solid #030663;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 5px;
+  width: 82px;
+  height: 80px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.green,
+.percentage:focus {
+  color: #abd6b7;
+}
+
+#fifteenPercentBtn::after {
+  content: "Recommended minimum";
+  color: var(--primary-text-color);
+  text-align: center;
+  font-size: 12px;
+  top: 90px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+.tip-percentage button:hover {
+  background-color: #3a3c97;
+}
+
+.tip-percentage button:focus {
+  background-color: #3a3c97;
+}
+
+.totals {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.totals h1 {
+  font-size: 27px;
+}
+
+.totals h1,
+h3 {
+  font-weight: 300;
+  margin-bottom: 1rem;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.totals h1 span,
+h3 span:first-of-type {
+  font-weight: 500;
+}
+
+#tipOutput,
+#totalBillOutput {
+  font-weight: 500;
+}
+
+#highlight {
+  display: inline-block;
+}
+
+#split {
+  background: none;
+  color: inherit;
+  text-decoration: underline;
+  border: none;
+  cursor: pointer;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.logo {
+  width: 70px;
+}
+
+footer p {
+  font-size: 16px;
+  color: #01034e;
+}
+
+footer a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 500px) {
+  .tip-percentage {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.2rem;
+  }
+  .calculator {
+    padding: 2.5rem;
+  }
+
+  .tip-percentage {
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .calculator {
+    padding: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .calculator {
+    padding: 2rem 0.75rem;
+  }
+}
+
+/* Animation keyframes */
+
+@keyframes bounce {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    transform: scale(1.1, 0.9) translateY(0);
+  }
+  30% {
+    transform: scale(0.9, 1.1) translateY(-30px);
+  }
+  50% {
+    transform: scale(1.05, 0.95) translateY(0);
+  }
+  58% {
+    transform: scale(1, 1) translateY(-7px);
+  }
+  65% {
+    transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
