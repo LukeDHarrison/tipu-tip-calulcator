@@ -39,7 +39,8 @@ tenPercentBtn.addEventListener("click", function () {
   }
 
   billTotal = Number(bill) + tenPercent;
-  totalBillOutput.innerHTML = billTotal;
+  totalBillOutput.innerHTML =
+    Math.round((billTotal + Number.EPSILON) * 100) / 100;
 });
 
 fifteenPercentBtn.addEventListener("click", function () {
@@ -57,7 +58,8 @@ fifteenPercentBtn.addEventListener("click", function () {
   }
 
   billTotal = Number(bill) + fifteenPercent;
-  totalBillOutput.innerHTML = billTotal;
+  totalBillOutput.innerHTML =
+    Math.round((billTotal + Number.EPSILON) * 100) / 100;
 });
 
 twentyPercentBtn.addEventListener("click", function () {
@@ -75,7 +77,8 @@ twentyPercentBtn.addEventListener("click", function () {
   }
 
   billTotal = Number(bill) + twentyPercent;
-  totalBillOutput.innerHTML = billTotal;
+  totalBillOutput.innerHTML =
+    Math.round((billTotal + Number.EPSILON) * 100) / 100;
 });
 
 twentyFivePercentBtn.addEventListener("click", function () {
@@ -93,10 +96,12 @@ twentyFivePercentBtn.addEventListener("click", function () {
   }
 
   billTotal = Number(bill) + twentyFivePercent;
-  totalBillOutput.innerHTML = billTotal;
+  totalBillOutput.innerHTML =
+    Math.round((billTotal + Number.EPSILON) * 100) / 100;
 });
 
 split.addEventListener("click", function () {
   const splitBill = billTotal / 2;
-  totalBillOutput.innerHTML = splitBill + " each";
+  totalBillOutput.innerHTML =
+    Math.round((splitBill + Number.EPSILON) * 100) / 100 + " each";
 });
